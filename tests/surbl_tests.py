@@ -1,6 +1,9 @@
 import unittest
 import sys
-import StringIO
+try:
+    from StringIO import StringIO
+except ImportError:
+    from io import StringIO
 
 from spam.surbl import *
 
@@ -12,8 +15,8 @@ class MockSurblChecker(SurblChecker):
 
 class TestSurblChecker(unittest.TestCase):
     def setUp(self):
-        two = StringIO.StringIO("a.com\nc.nz\ns.it\n")
-        three = StringIO.StringIO("qy.sa.com\nu.cc.nz\nii.sss.it\n")
+        two = StringIO("a.com\nc.nz\ns.it\n")
+        three = StringIO("qy.sa.com\nu.cc.nz\nii.sss.it\n")
         self.checker = MockSurblChecker(two, three)
 
     def test_spammer(self):
