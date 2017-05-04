@@ -35,9 +35,9 @@ From PyPI (stable)::
 
     pip install spam-blocklists
 
-From Github (unstable)::
+From Github (this fork)::
 
-    pip install git+git://github.com/fmarani/spam.git#egg=spam-blocklists
+    pip install git+git://github.com/aorzh/spam.git#egg=spam-blocklists
 
 Use
 ---
